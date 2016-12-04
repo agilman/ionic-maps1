@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.ionicmaps1443251" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>myApp</name>
+  <name>Nomadic App</name>
   <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="sasha@nomadiclogs.com" href="http://www.nomadiclogs.com/">
+      Alexander Gilman
     </author>
   <content src="index.html"/>
   <access origin="*"/>
