@@ -1,8 +1,13 @@
  <ion-view view-title="Dashboard">
   <ion-content class="padding">
+    
     <h2>Nomadic Logs hybrid app 1.0</h2>
     <p>
         1. Try getting current location
+        <p ng-bind="msg"></p>
+        <br>
+        Lat: <p ng-bind="lat"></p>
+        Long: <p ng-bind="long"></p>
     </p>
     <p>
         2. Try showing Leaflet map

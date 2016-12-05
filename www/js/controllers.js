@@ -1,6 +1,18 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope,$log, $ionicPlatform,$cordovaGeolocation) {
+    $ionicPlatform.ready(function() {
+        var posOptions = {timeout: 100000, maximumAge:100000, enableHighAccuracy: true};
+        $cordovaGeolocation
+        .getCurrentPosition(posOptions)
+        .then(function (position) {
+            $scope.lat  = position.coords.latitude;
+            $scope.long = position.coords.longitude;
+        }, function(err) {
+            //error
+        });
+    });
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
