@@ -1,24 +1,30 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope,$log, $ionicPlatform,$cordovaGeolocation) {
-    $scope.center = {
-      lat: 52.367215,
-      lng: 4.893036,
-      zoom: 1
-    };
-    $scope.maxbounds = {};
-    $scope.defaults = {
-      maxZoom: 16,
-      minZoom: 12,
-      tileLayer: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
-      tileLayerOptions: {
-          opacity: 0.9,
-          detectRetina: true,
-          reuseTiles: true,
-      },
-      scrollWheelZoom: true
-    };
-  
+    angular.extend($scope, {
+        tiles: {
+            url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        },
+        pdxCenter: {
+            lat: 45.51883,
+            lng: -122.629,
+            zoom: 9
+        },
+        markers: {
+            osloMarker: {
+            lat: 32.07883,
+            lng: 34.773259,
+            message: "I want to travel here!",
+            focus: true,
+            draggable: false
+            }
+        },
+        defaults: {
+            scrollWheelZoom: false,
+            zoomControl: false
+        }
+    });
+    
     $ionicPlatform.ready(function() {
         var posOptions = {timeout: 100000, maximumAge:100000, enableHighAccuracy: true};
         $cordovaGeolocation
