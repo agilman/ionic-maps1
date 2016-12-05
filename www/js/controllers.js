@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngCordova'])
+angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope,$log, $ionicPlatform,$cordovaGeolocation) {
     $ionicPlatform.ready(function() {
